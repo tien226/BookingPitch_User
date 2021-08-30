@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llLayout_ItemYardList"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:elevation="0dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="150dp"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imgAvatar_ItemYardList"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:src="@drawable/img_yardlist" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvNamePitch_ItemYardList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tên sân"
+        android:textColor="@color/textGray"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTypePitch_ItemYardList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sân 7 người"
+        android:textColor="@color/textGray"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvPrimePitch_ItemYardList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Giá sân"
+        android:textColor="@color/textGray"
+        android:textSize="16sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvStatusPitch_ItemYardList"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Full"-->
+<!--        android:textColor="@color/textGray"-->
+<!--        android:textSize="16sp" />-->
+
+</LinearLayout>

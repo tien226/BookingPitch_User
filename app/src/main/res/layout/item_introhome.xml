@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="12dp"
+        android:padding="6dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:id="@+id/img_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/poster_home"
+            android:scaleType="fitXY" />
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

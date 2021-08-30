@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvSelectLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="@string/lua_chon_ngon_ngu"
+            android:textColor="@color/green_"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp">
+
+            <Button
+                android:id="@+id/btn_Selectlogin_ENlang"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/btn_login_VIlang"
+                android:background="@drawable/selector_english" />
+
+            <Button
+                android:id="@+id/btn_Selectlogin_VIlang"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_vietnam" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_logo_LoginScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="32dp"
+        android:src="@drawable/logo_register" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_register"
+                android:orientation="vertical">
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/tvSelectLogin"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginLeft="16dp"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:layout_marginRight="16dp"-->
+                <!--                    android:layout_marginBottom="16dp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:text="@string/hinh_thuc_dang_nhap"-->
+                <!--                    android:textColor="@color/red"-->
+                <!--                    android:textSize="20sp"-->
+                <!--                    android:textStyle="bold" />-->
+
+                <Button
+                    android:id="@+id/btnLoginWithEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/sec_radient_button"
+                    android:lineHeight="28dp"
+                    android:text="@string/login_with_email"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnLoginWithPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/sec_radient_button"
+                    android:lineHeight="28dp"
+                    android:text="@string/login_with_phone"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/btnLoginNoAcc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/bg_buttom"
+                    android:lineHeight="28dp"
+                    android:text="@string/login_no_acc"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green_"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/btn_login_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:src="@drawable/sec_ic_grid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:tint="@color/green_" />
+
+        <TextView
+            android:drawablePadding="8dp"
+            android:id="@+id/tvIsInternet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:drawableLeft="@drawable/ic_warning"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="inter net"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lay_login_expand_icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28dp"
+            android:visibility="gone"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:id="@+id/lay_login_mangluoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:translationY="0dp"
+                app:layout_constraintCircle="@id/btn_login_cancelMenu"
+                app:layout_constraintCircleAngle="270"
+                app:layout_constraintCircleRadius="0dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/customer_service" />
+
+                <TextView
+                    android:id="@+id/tvSupportMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/ho_tro"
+                    android:textColor="@color/green_"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_login_hdsd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/btn_login_cancelMenu"
+                app:layout_constraintCircleRadius="0dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:id="@+id/tvInfoMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/thong_tin_app"
+                    android:textColor="@color/green_"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_login_chatVCBS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/btn_login_cancelMenu"
+                app:layout_constraintCircleAngle="90"
+                app:layout_constraintCircleRadius="0dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    app:tint="@color/green_" />
+
+                <TextView
+                    android:id="@+id/tvHDSDMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/hdsd"
+                    android:textColor="@color/green_"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_login_cancelMenu"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/sec_ic_login_ovalcancel"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:translationY="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

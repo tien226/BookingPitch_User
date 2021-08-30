@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/thong_bao"
+        android:textColor="@color/green_"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <TextView
+        android:id="@+id/tvContent_DialogNotifiApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="@string/nhap_sdt_xem_lich"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtPhone_DialogHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edittext_custom_state"
+        android:hint="@string/nhap_sdt"
+        android:inputType="number"
+        android:lineHeight="28dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCancel_DialogHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_buttom"
+            android:lineHeight="28dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/thoat"
+            android:textAllCaps="false"
+            android:textColor="@color/green_"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnYes_DialogHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/sec_radient_button"
+            android:lineHeight="28dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/dong_y"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

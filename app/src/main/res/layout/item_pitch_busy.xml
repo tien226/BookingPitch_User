@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/layout_ItemPitchBusy"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tvDate_ItemPitchBusy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày"
+        android:textSize="16sp" />
+
+    <TextView
+        android:textColor="@color/red"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tvCa_ItemPitchBusy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ca"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

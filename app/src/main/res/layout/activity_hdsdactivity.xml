@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.HDSDActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:navigationIcon="@drawable/sec_ic_back"
+        android:id="@+id/toolbar_HDSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_"
+        app:titleTextColor="@color/white" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:layout_marginTop="6dp"
+        android:id="@+id/pdfViewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_IconHome"
+        android:icon="@drawable/nav_icon_home"
+        android:title="@string/trang_chu" />
+
+    <item
+        android:id="@+id/nav_IconHistory"
+        android:icon="@drawable/nav_icon_seen"
+        android:title="@string/lich_cua_toi" />
+
+<!--    <item-->
+<!--        android:id="@+id/nav_IconNews"-->
+<!--        android:icon="@drawable/nav_icon_news"-->
+<!--        android:title="Lịch của tôi" />-->
+
+    <item
+        android:id="@+id/nav_IconMaps"
+        android:icon="@drawable/nav_icon_profile"
+        android:title="@string/toi" />
+
+
+</menu>

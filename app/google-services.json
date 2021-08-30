@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1042049438843",
+    "project_id": "solid-saga-286623",
+    "storage_bucket": "solid-saga-286623.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042049438843:android:d8fef9c0da1a9546d73ede",
+        "android_client_info": {
+          "package_name": "com.mobile.bookingpitch_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042049438843-1smk0p0ks58bge1tsrq5io2tvvvj1kng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.bookingpitch_user",
+            "certificate_hash": "d5a8fcc41e504fa59b84e3370bf454cf3aced4d1"
+          }
+        },
+        {
+          "client_id": "1042049438843-l13rj5li6cpnuslblkl66ts4kfggskuh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAQsS2Wek3EevaGPAQcibVr2_sltEhKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042049438843-l13rj5li6cpnuslblkl66ts4kfggskuh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

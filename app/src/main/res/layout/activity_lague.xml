@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray_bg"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_marginBottom="8dp"
+        android:id="@+id/toolbar_Language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_"
+        app:navigationIcon="@drawable/sec_ic_back"
+        app:titleTextColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/ln_language_vi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp">
+
+        <ImageView
+            android:id="@+id/img_flagVie"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_vietnam_active" />
+
+        <ImageButton
+            android:id="@+id/img_language_vi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/checkbox_layout"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_flagVie"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Tiếng Việt"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/green_" />
+
+    <RelativeLayout
+        android:id="@+id/ln_language_en"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp">
+
+        <ImageView
+            android:id="@+id/img_flagEng"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_english_active" />
+
+        <ImageButton
+            android:id="@+id/img_language_en"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/checkbox_layout"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_flagEng"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="English"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/green_" />
+
+    <Button
+        android:id="@+id/btn_changeLanguage_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/sec_radient_button"
+        android:lineHeight="28dp"
+        android:text="@string/doi_ngon_ngu"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
