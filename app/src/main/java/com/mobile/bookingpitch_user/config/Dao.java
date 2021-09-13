@@ -26,11 +26,11 @@ public class Dao {
         String s = "";
         for (int i = 0; i < ls.size(); i++) {
             if (ls.get(i) != null && mapSpan.get(ls.get(i)) != null) {
-                s += mapSpan.get(ls.get(i)) + ", ";
+                s += mapSpan.get(ls.get(i));
             }
         }
 
-        return s.equals("") ? "" : s.substring(0, s.length() - 2);
+        return s;
     }
 
     public String getSpanPitchID(Context context, String id) {
