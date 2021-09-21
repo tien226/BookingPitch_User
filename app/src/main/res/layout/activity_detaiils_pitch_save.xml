@@ -100,13 +100,13 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/luu_y_gia_san_theo_tg"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="8dp"-->
+<!--                        android:text="@string/luu_y_gia_san_theo_tg"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp" />-->
 
                 </LinearLayout>
 

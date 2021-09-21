@@ -1,8 +1,11 @@
 package com.mobile.bookingpitch_user.dialog;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,9 +23,10 @@ import com.mobile.bookingpitch_user.activity.BookNowPitchActivity;
 import com.mobile.bookingpitch_user.activity.MainActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import org.jetbrains.annotations.NotNull;
+
 public class successFull_BookPitch_dialog extends BottomSheetDialogFragment implements View.OnClickListener {
-    public successFull_BookPitch_dialog() {
-    }
+    public successFull_BookPitch_dialog() {}
 
     private Button btnHome;
     private View view;
@@ -35,13 +39,13 @@ public class successFull_BookPitch_dialog extends BottomSheetDialogFragment impl
         view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_successfull_bookpitch, container, false);
 
         initView();
+
         btnHome.setOnClickListener(this);
         tvPhone.setOnClickListener(this);
         tvMaps.setOnClickListener(this);
 
         tvPhoneUser.setText(BookNowPitchActivity.strPhoneBookPitch);
         tvDate.setText(BookNowPitchActivity.strDate);
-//        tvTime.setText(BookNowPitchActivity.strTimeStart + " - " + BookNowPitchActivity.strTimeEnd);
         tvTime.setText(BookNowPitchActivity.strSpanSpinner);
 
         return view;

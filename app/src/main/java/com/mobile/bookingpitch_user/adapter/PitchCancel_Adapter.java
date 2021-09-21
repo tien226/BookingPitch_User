@@ -42,8 +42,8 @@ public class PitchCancel_Adapter extends RecyclerView.Adapter<PitchCancel_Adapte
     public void onBindViewHolder(@NonNull PitchCancel_Adapter.ViewHolder holder, int position) {
         ListPitchsCancel pitchsCancel = listPitchCancel.get(position);
 
-//        String strUrl = "https://datn-2021.herokuapp.com" + pitchsCancel.getImage();
-        String strUrl = pitchsCancel.getImage();
+        String strUrl = "https://datn-2021.herokuapp.com" + pitchsCancel.getImage();
+//        String strUrl = pitchsCancel.getImage();
         Picasso.get().load(strUrl).placeholder(R.drawable.img_yardlist).error(R.drawable.img_yardlist).into(holder.imgAvatar);
         holder.tvName.setText(pitchsCancel.getPitchName());
 //        holder.tvType.setText(datum.getPitchName());

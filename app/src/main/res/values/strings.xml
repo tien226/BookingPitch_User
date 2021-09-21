@@ -65,8 +65,8 @@
     <string name="trong_tai">Trọng tài</string>
     <string name="tien_trong_tai">(150.000/1n/trận)</string>
     <string name="so_luong">số lượng</string>
-    <string name="thue_ao">Thuê áo </string>
-    <string name="tien_thue_ao">(280.000/trận)</string>
+    <string name="thue_ao">Thuê áo tập</string>
+    <string name="tien_thue_ao">(80.000/trận)</string>
     <string name="dat_nuoc">Đặt nước</string>
     <string name="gia_tam_tinh">Giá tạm tính</string>
     <string name="da_bao_gom">(Đã bao gồm Tiền sân + tiền trọng tài + tiền áo + tiền nước)</string>
@@ -81,11 +81,12 @@
     <string name="dang_cho">Đang chờ</string>
     <string name="da_dat">Đã đặt</string>
     <string name="da_huy">Đã hủy</string>
+    <string name="da_da">Đã đá</string>
     <string name="nhap_sdt_xem_lich">Vui lòng nhập số điện thoại bạn muốn xem lịch đặt sân</string>
     <string name="dang_tai_dl">Đang tải dữ liệu. Vui lòng chờ!</string>
     <string name="noti_history">Không có dữ liệu hiển thị.\n Bạn vui lòng tới màn hình trang chủ để đặt sân hoặc nhập số điện thoại bạn muốn xem lịch</string>
-    <string name="trang_chu">Trang chủ</string>
-    <string name="lich_cua_toi">Lịch của tôi</string>
+    <string name="trang_chu">Trang Chủ</string>
+    <string name="lich_cua_toi">Lịch Của Tôi</string>
     <string name="toi">Tôi</string>
     <string name="lich_cua_toi_tollbar">Lịch Của Tôi</string>
     <string name="ho_tro">Hỗ trợ</string>
@@ -151,15 +152,15 @@
     <string name="bang_gia_san_aline">Bảng giá sân bóng Aline</string>
     <string name="bang_gia_san_">Bảng Giá Sân</string>
     <string name="binh">bình</string>
-    <string name="danh_sach_ca_dat_1_thang">Danh sách ca đã đặt trong 1 tháng</string>
-    <string name="luu_y_dat_coc_san_bong">=> Lưu ý: Bạn cần đặt cọc trước 100.000 đ, để giữ sân cho bạn. Chúng tôi sẽ liên hệ lại với bạn sớm nhất.</string>
+    <string name="danh_sach_ca_dat_1_thang">Danh sách ca khách chọn trong 1 tháng</string>
+    <string name="luu_y_dat_coc_san_bong">=> Lưu ý: Bạn cần đặt cọc trước, để giữ sân cho bạn. Chúng tôi sẽ liên hệ lại với bạn sớm nhất.</string>
     <string name="trang_thai">Trạng thái</string>
     <string name="ngay_dat_san">Ngày đặt sân</string>
     <string name="nhap_so_tien_thanh_toan">Vui lòng nhập số tiền thanh toán</string>
     <string name="thanh_toan">Thanh toán</string>
     <string name="thanh_toan_qua_zalo">Thanh toán qua Zalo Pay</string>
-    <string name="ca_da_duoc_dat_ngay">Ca đã được đặt trong ngày</string>
-    <string name="ca_da_co_nguoi_dat">Ca đã có người đặt. Xin vui lòng lựa chọn ca khác</string>
+    <string name="ca_da_duoc_dat_ngay">Ca khách đã chọn trong ngày</string>
+    <string name="ca_da_co_nguoi_dat">Ca đã có khách đặt. Xin vui lòng lựa chọn ca khác</string>
     <string name="ca_dat_san_het_time">Xin lỗi, ca bạn đặt đã hết thời gian trong ngày. Bạn vui lòng lựa chọn ca khác</string>
     <string name="chua_co_ca_dat">Chưa có ca đặt</string>
     <string name="ca">Ca</string>
@@ -170,5 +171,8 @@
     <string name="khong_co_internet">Không có Internet. Vui lòng kiểm tra kết nối</string>
     <string name="huy_lich_dat">Hủy Lịch Đặt</string>
     <string name="conten_huy_lich_dat">Bạn có chắc chắn muốn hủy lịch đặt sân. Mọi thông tin về lịch bạn đã đặt sẽ bị hủy?</string>
+    <string name="thoii_gian_ca_dat_trong_ngay">Ca đã đặt trong ngày</string>
+    <string name="lua_chon_ca_dat_san">Lựa chọn ca đặt sân</string>
+    <string name="dat_lich_co_dinh_theo_thang">Đặt lịch cố định theo tháng</string>
 
 </resources>

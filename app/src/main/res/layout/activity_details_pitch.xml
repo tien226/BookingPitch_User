@@ -53,7 +53,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
-                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -78,32 +77,35 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
-                                android:textSize="16sp"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/thoi_gian_san_da_dat"
-                                android:textColor="@color/black" />
+                                android:gravity="right"
+                                android:text="@string/thoii_gian_ca_dat_trong_ngay"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
 
                             <TextView
-                                android:textSize="14sp"
                                 android:id="@+id/tvTime_DetailsPitch"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/textGray" />
+                                android:gravity="right"
+                                android:textColor="@color/textGray"
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/luu_y_gia_san_theo_tg"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="8dp"-->
+<!--                        android:text="@string/luu_y_gia_san_theo_tg"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp" />-->
 
                 </LinearLayout>
 

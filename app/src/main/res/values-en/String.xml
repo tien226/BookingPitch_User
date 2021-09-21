@@ -67,7 +67,7 @@
     <string name="tien_trong_tai">(150.000/1n/battle)</string>
     <string name="so_luong">amount</string>
     <string name="thue_ao">Rent jersey</string>
-    <string name="tien_thue_ao">(280.000/battle)</string>
+    <string name="tien_thue_ao">(80.000/battle)</string>
     <string name="dat_nuoc">Set water</string>
     <string name="gia_tam_tinh">Temporary price</string>
     <string name="da_bao_gom">(Included pitch fee + referee fee + shirt fee + water fee)</string>
@@ -82,6 +82,7 @@
     <string name="dang_cho">Waiting</string>
     <string name="da_dat">Keeping</string>
     <string name="da_huy">Cancel</string>
+    <string name="da_da">Done</string>
     <string name="nhap_sdt_xem_lich">Please enter the phone number you would like to view ballpark bookings</string>
     <string name="dang_tai_dl">Loading. Please wait!</string>
     <string name="noti_history">No data displayed.\n Please go to the home screen to book a course or enter the phone number you want to see the schedule</string>
@@ -153,7 +154,7 @@
     <string name="bang_gia_san_">Pitch Price</string>
     <string name="binh">bottle</string>
     <string name="danh_sach_ca_dat_1_thang">List of shifts booked in 1 month</string>
-    <string name="luu_y_dat_coc_san_bong">=> Note: You need to deposit 100,000 VND in advance, to keep the yard for you. We will contact you as soon as possible.</string>
+    <string name="luu_y_dat_coc_san_bong">=> Note: You need to deposit in advance, to keep the yard for you. We will contact you as soon as possible.</string>
     <string name="trang_thai">Status</string>
     <string name="ngay_dat_san">soccer field booking date</string>
     <string name="nhap_so_tien_thanh_toan">Please enter payment amount</string>
@@ -171,5 +172,8 @@
     <string name="khong_co_internet">No Internet. Please check the connection</string>
     <string name="huy_lich_dat">Cancel Ball Field Reservations</string>
     <string name="conten_huy_lich_dat">Are you sure you want to cancel your soccer field reservation? Will all information about the calendar you have booked will be cancelled?</string>
+    <string name="thoii_gian_ca_dat_trong_ngay">Shift time of the day</string>
+    <string name="lua_chon_ca_dat_san">Select shift set the yard</string>
+    <string name="dat_lich_co_dinh_theo_thang">Set a fixed schedule by month</string>
 
 </resources>

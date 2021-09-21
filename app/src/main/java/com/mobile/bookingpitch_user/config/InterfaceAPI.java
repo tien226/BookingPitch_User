@@ -1,21 +1,18 @@
 package com.mobile.bookingpitch_user.config;
 
 import com.mobile.bookingpitch_user.model.CancelPitch;
-import com.mobile.bookingpitch_user.model.ChangePass_Model.ChangePass;
-import com.mobile.bookingpitch_user.model.CityAndDistrict.HDCity;
-import com.mobile.bookingpitch_user.model.CityAndDistrict.HDDistrict;
+import com.mobile.bookingpitch_user.model.CreateUser;
 import com.mobile.bookingpitch_user.model.DetailsPitch;
-import com.mobile.bookingpitch_user.model.EmailForgotPass_Model.EmailForgotPass;
-import com.mobile.bookingpitch_user.model.ForgotPass_Model.ForgotPass;
+import com.mobile.bookingpitch_user.model.GetAllUser_Model.GetAllUser;
+import com.mobile.bookingpitch_user.model.HistoryPitch_Done.HistoryDone;
 import com.mobile.bookingpitch_user.model.HistoryPitch_Model.HistoryPitch;
-import com.mobile.bookingpitch_user.model.Login.ProfileEmployee;
 import com.mobile.bookingpitch_user.model.News_Model.News;
 import com.mobile.bookingpitch_user.model.PitchBusy_Model.PitchBusy;
 import com.mobile.bookingpitch_user.model.PutPitch;
-import com.mobile.bookingpitch_user.model.RegisterTwo_Model.RegisterTwo;
-import com.mobile.bookingpitch_user.model.Register_Model.Register;
+import com.mobile.bookingpitch_user.model.PutPitchMultiDate;
 import com.mobile.bookingpitch_user.model.YardList_Model.YardList;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -27,37 +24,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface InterfaceAPI {
-    // api tinh thanh
-    @GET("city.php")
-    Call<HDCity> getCity();
-
-    // api quan huyen
-    @GET("district.php")
-    Call<HDDistrict> getCityAndDistrict();
-
-    //api dang ky 1
-    @FormUrlEncoded
-    @POST("register_ntd.php")
-    Call<Register> registerAcc(@Field("name_ntd") String name_ntd,
-                               @Field("email") String email,
-                               @Field("password") String password,
-                               @Field("repass") String repass);
-
-    //api dang ky 2
-    @FormUrlEncoded
-    @POST("register_ntd2.php")
-    Call<RegisterTwo> registerAccTwo(@Field("token") String token,
-                                     @Field("avatar") String avatar,
-                                     @Field("telephone") String telephone,
-                                     @Field("address") String address,
-                                     @Field("city") String city,
-                                     @Field("district") String district);
-
-    // api login
-    @FormUrlEncoded
-    @POST("login_ntd.php")
-    Call<ProfileEmployee> loginAccount(@FieldMap Map<String, String> params);
-
     // api lay danh sach san
     @GET("pitch/getAllU")
     Call<YardList> getAllPitch();
@@ -69,28 +35,6 @@ public interface InterfaceAPI {
     // api lấy thông tin sân đã đặt
     @GET("pitch/getByUser/{userID}")
     Call<HistoryPitch> getAllMyPitch(@Path("userID") String userID);
-
-    // api change pass
-    @FormUrlEncoded
-    @POST("change_pass.php")
-    Call<ChangePass> changePass(@Field("token") String token,
-                                @Field("password") String password,
-                                @Field("newpass") String newpass,
-                                @Field("repass") String repass);
-
-    // api email forgot pass
-    @FormUrlEncoded
-    @POST("email_forget_pass.php")
-    Call<EmailForgotPass> emailForgotPass(@Field("email") String email,
-                                          @Field("type") int type);
-
-    // api forgot pass
-    @FormUrlEncoded
-    @POST("reset_pass.php")
-    Call<ForgotPass> forgotPass(@Field("token") String token,
-                                @Field("password") String password,
-                                @Field("repass") String repass,
-                                @Field("type") int type);
 
     // api details pitch
     @FormUrlEncoded
@@ -105,11 +49,32 @@ public interface InterfaceAPI {
     // api huy đặt sân
     @FormUrlEncoded
     @POST("pitch/user/editPitch/{id}")
-    Call<CancelPitch> cancelBookPitch(@Path("id") String id, @Field("state") String state);
+    Call<CancelPitch> cancelBookPitch(@Path("id") String id, @Field("state") String state, @Field("typeBooking") String typeBooking, @Field("editBy") String editBy);
 
     // api xem danh sách lịch sân bận
     @GET("pitch/getPitchBusy/{pitchID}")
     Call<PitchBusy> getAllPitchBusy(@Path("pitchID") String pitchID);
 
+    // api xem danh sách ca bận theo ngày của tất cả các sân
+    @GET("pitch/getPitchBusyByDate/{date}")
+    Call<com.mobile.bookingpitch_user.model.PitchBusyByDate.PutPitch> getAllPitchBusyByDate(@Path("date") String date);
+
+    // api thêm mới user
+    @FormUrlEncoded
+    @POST("user/createUser")
+    Call<CreateUser> createUser(@FieldMap Map<String, String> maps);
+
+    // api đặt sân theo tuần
+    @FormUrlEncoded
+    @POST("pitch/createAny")
+    Call<PutPitchMultiDate> putPitchMultiDate(@FieldMap Map<String, String> maps, @FieldMap Map<String, List<String>> dateAny);
+
+    // api lấy danh sách lịch sử đã đá
+    @GET("user/getHistory/{userID}")
+    Call<HistoryDone> getPitchDone(@Path("userID") String userID);
+
+    // api lấy ds user
+    @GET("user/getAll")
+    Call<GetAllUser> getAllAccUser();
 
 }

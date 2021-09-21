@@ -42,8 +42,8 @@ public class PitchKeeping_Adapter extends RecyclerView.Adapter<PitchKeeping_Adap
     public void onBindViewHolder(@NonNull PitchKeeping_Adapter.ViewHolder holder, int position) {
         ListPitchsKeeping pitchsKeeping = listPitchsKeepings.get(position);
 
-//        String strUrl = "https://datn-2021.herokuapp.com" + pitchsKeeping.getImage();
-        String strUrl = pitchsKeeping.getImage();
+        String strUrl = "https://datn-2021.herokuapp.com" + pitchsKeeping.getImage();
+//        String strUrl = pitchsKeeping.getImage();
         Picasso.get().load(strUrl).placeholder(R.drawable.img_yardlist).error(R.drawable.img_yardlist).into(holder.imgAvatar);
         holder.tvName.setText(pitchsKeeping.getPitchName());
 //        holder.tvType.setText(datum.getPitchName());

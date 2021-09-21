@@ -44,8 +44,6 @@ public class SplashActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         currentUser = auth.getCurrentUser();
 
-        initCityData();
-
 //        animationView = findViewById(R.id.animationView);
 //        animationView.animate().translationX(1500).setDuration(1500).setStartDelay(1900);
 
@@ -63,54 +61,5 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         }, 4000);
-    }
-
-    private void initCityData() {
-        SharedPreferences sharedPreferences = this.getSharedPreferences("DistrictAndCity", MODE_PRIVATE);
-        Gson cityGson = new Gson();
-        Gson districtGson = new Gson();
-
-        Retrofit cityRetrofit = ConfigRetrofitApi.getInstance();
-        cityRetrofit.create(InterfaceAPI.class)
-                .getCity()
-                .enqueue(new Callback<HDCity>() {
-                    @Override
-                    public void onResponse(Call<HDCity> call, Response<HDCity> response) {
-                        if (response.body() != null && response.body().getData().size() != 0) {
-                            lsCity.addAll(response.body().getData());
-                            String json = cityGson.toJson(lsCity);
-                            @SuppressLint("CommitPrefEdits")
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("listCity", json);
-                            editor.apply();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<HDCity> call, Throwable t) {
-
-                    }
-                });
-        Retrofit districtRetrofit = ConfigRetrofitApi.getInstance();
-        districtRetrofit.create(InterfaceAPI.class)
-                .getCityAndDistrict()
-                .enqueue(new Callback<HDDistrict>() {
-                    @Override
-                    public void onResponse(Call<HDDistrict> call, Response<HDDistrict> response) {
-                        if (response.body() != null && response.body().getData().size() != 0) {
-                            lsDistrict.addAll(response.body().getData());
-                            String json = districtGson.toJson(lsDistrict);
-                            @SuppressLint("CommitPrefEdits")
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("listDistrict", json);
-                            editor.apply();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<HDDistrict> call, Throwable t) {
-
-                    }
-                });
     }
 }

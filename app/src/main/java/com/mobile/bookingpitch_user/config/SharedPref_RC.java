@@ -13,9 +13,6 @@ public class SharedPref_RC {
 
     //Username
     public static final String UserToken_RC = "user_token";
-    public static final String UserName_RC = "user_name";
-    public static final String UserEmail_RC = "user_email";
-    public static final String UserAvatar_RC = "user_avatar";
 
     @SuppressLint("StaticFieldLeak")
     public static SharedPref_RC mInstance;
@@ -43,54 +40,9 @@ public class SharedPref_RC {
         editor.apply();
     }
 
-    public void storeUserName_RC(String name) {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(UserName_RC, name);
-        editor.apply();
-    }
-
-    public void storeUserEmail_RC(String email) {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(UserEmail_RC, email);
-        editor.apply();
-    }
-
-    public void storeUserAvatar_RC(String avatar) {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(UserAvatar_RC, avatar);
-        editor.apply();
-    }
-
     public boolean isLoggedIn_RC() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(UserToken_RC, null) != null;
-    }
-
-    public String LoggedInUserAvatar_RC() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(UserAvatar_RC, null);
-    }
-
-    //find logged in user
-    public String LoggedInUserName_RC() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(UserName_RC, null);
-
-    }
-
-    public String LoggedInEmail_RC() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(UserEmail_RC, null);
-
-    }
-
-    public String LoggedInUserToken_RC() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(UserToken_RC, null);
-
     }
 
     //Logout user

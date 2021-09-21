@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ListPitchsCancel {
-
     @SerializedName("pitchID")
     @Expose
     private String pitchID;
@@ -17,6 +16,9 @@ public class ListPitchsCancel {
     @SerializedName("userID")
     @Expose
     private String userID;
+    @SerializedName("userName")
+    @Expose
+    private String userName;
     @SerializedName("date")
     @Expose
     private String date;
@@ -87,6 +89,14 @@ public class ListPitchsCancel {
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getDate() {
@@ -192,5 +202,4 @@ public class ListPitchsCancel {
     public void setV(Integer v) {
         this.v = v;
     }
-
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<!--<ScrollView -->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dialog_success_bookpitch"
@@ -34,7 +34,7 @@
                 android:layout_marginLeft="16dp"
                 android:text="@string/dat_lich_thanh_cong"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="@string/thong_tin_ct_cua_ban"
-                    android:textColor="@color/textGray"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -72,9 +72,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
+
                 android:orientation="horizontal"
                 android:weightSum="3">
 
@@ -109,11 +108,11 @@
 
                     <TextView
                         android:id="@+id/tvPhoneUser_DialogSuccessBookPitch"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_marginLeft="8dp"
-                        android:text="Số điện thoại"
+                        android:text="0981480462"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -149,11 +148,11 @@
 
                     <TextView
                         android:id="@+id/tvDate_DialogSuccessBookPitch"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_marginLeft="8dp"
-                        android:text="Ngày"
+                        android:text="31-08-2021"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -189,11 +188,11 @@
 
                     <TextView
                         android:id="@+id/tvTime_DialogSuccessBookPitch"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_marginLeft="8dp"
-                        android:text="Giờ"
+                        android:text="ca2: 17h00-17h00"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -326,4 +325,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+<!--</ScrollView>-->

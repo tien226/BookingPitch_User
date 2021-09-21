@@ -17,6 +17,9 @@ public class ListPitchsKeeping {
     @SerializedName("userID")
     @Expose
     private String userID;
+    @SerializedName("userName")
+    @Expose
+    private String userName;
     @SerializedName("date")
     @Expose
     private String date;
@@ -87,6 +90,14 @@ public class ListPitchsKeeping {
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getDate() {

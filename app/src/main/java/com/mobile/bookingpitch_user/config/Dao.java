@@ -1,9 +1,11 @@
 package com.mobile.bookingpitch_user.config;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.mobile.bookingpitch_user.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,5 +55,27 @@ public class Dao {
         }
         return null;
     }
+
+//    public String getCityFromList(Context context, String s) {
+//        List<String> z = new ArrayList<>();
+//        int j = 0;
+//        for (int i = 0 ; i < s.length(); i++){
+//            if (s.charAt(i) == '/'){
+//                z.add(s.substring(j,i));
+//                j = i++;
+//            }
+//        }
+//        String r = "";
+//        if(z.size() >0) {
+//            Log.e(Dao.class.getName(), z.get(z.size() - 1));
+//            Map<String, String> m = getSpanPitch(context);
+//
+//            for (int i = 0; i < z.size(); i++) {
+//                r += m.get(z.get(i));
+//                r += "/ ";
+//            }
+//        }
+//        return r.length() >2 ? r.substring(0, r.length() -2) : "";
+//    }
 
 }

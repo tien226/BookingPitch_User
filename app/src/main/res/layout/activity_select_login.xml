@@ -91,19 +91,6 @@
                 <!--                    android:textStyle="bold" />-->
 
                 <Button
-                    android:id="@+id/btnLoginWithEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:background="@drawable/sec_radient_button"
-                    android:lineHeight="28dp"
-                    android:text="@string/login_with_email"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18dp"
-                    android:visibility="gone" />
-
-                <Button
                     android:id="@+id/btnLoginWithPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -130,7 +117,6 @@
                     android:textAllCaps="false"
                     android:textColor="@color/green_"
                     android:textSize="18dp" />
-
             </LinearLayout>
         </ScrollView>
 

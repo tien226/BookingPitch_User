@@ -18,10 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobile.bookingpitch_user.R;
 import com.mobile.bookingpitch_user.activity.AppInfo_Activity;
-import com.mobile.bookingpitch_user.activity.ChangePassActivity;
 import com.mobile.bookingpitch_user.activity.HDSDActivity;
 import com.mobile.bookingpitch_user.activity.ChangeLanguageActivity;
-import com.mobile.bookingpitch_user.activity.LoginActivity;
 import com.mobile.bookingpitch_user.activity.SelectLoginActivity;
 import com.mobile.bookingpitch_user.activity.SupportActivity;
 import com.mobile.bookingpitch_user.config.SharedPref_RC;
@@ -31,7 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyInfor_Fragment extends Fragment implements View.OnClickListener {
     private View view;
-    private LinearLayout support, appInfo, logOut, changerPass, setting, hdsd;
+    private LinearLayout support, appInfo, logOut, setting, hdsd;
     private CircleImageView imgAvatar;
     private TextView tvname, tvEmail, tvYes;
     private FirebaseAuth auth;
@@ -48,7 +46,7 @@ public class MyInfor_Fragment extends Fragment implements View.OnClickListener {
         initView();
 
         if (SharedPref_RC.getInstance_RC(getActivity()).isLoggedIn_RC()) {
-            Picasso.get().load(SharedPref_RC.getInstance_RC(getContext()).LoggedInUserAvatar_RC()).placeholder(R.drawable.logo_register).error(R.drawable.logo_register).into(imgAvatar);
+            Picasso.get().load(R.drawable.logo_register).placeholder(R.drawable.logo_register).error(R.drawable.logo_register).into(imgAvatar);
 //            tvname.setText(SharedPref_RC.getInstance_RC(getContext()).LoggedInUserName_RC());
 //            tvEmail.setText(SharedPref_RC.getInstance_RC(getContext()).LoggedInEmail_RC());
             tvname.setText(R.string.xin_chao);
@@ -61,17 +59,11 @@ public class MyInfor_Fragment extends Fragment implements View.OnClickListener {
             logOut.setVisibility(View.GONE);
         }
 
-        if (SharedPref_RC.getInstance_RC(getContext()).LoggedInEmail_RC() == null){
-            changerPass.setVisibility(View.GONE);
-        }else {
-            changerPass.setVisibility(View.VISIBLE);
-        }
 
 
         support.setOnClickListener(this);
         appInfo.setOnClickListener(this);
         logOut.setOnClickListener(this);
-        changerPass.setOnClickListener(this);
         hdsd.setOnClickListener(this);
         setting.setOnClickListener(this);
 
@@ -81,7 +73,6 @@ public class MyInfor_Fragment extends Fragment implements View.OnClickListener {
     private void initView() {
         setting = view.findViewById(R.id.llLayoutSetting);
         hdsd = view.findViewById(R.id.llLayoutHDSD_MyInfo);
-        changerPass = view.findViewById(R.id.llLayoutChangePass);
         imgAvatar = view.findViewById(R.id.imgAvatar_MyInfor);
         tvname = view.findViewById(R.id.tvName_MyInfor);
         tvEmail = view.findViewById(R.id.tvEmail_MyInfor);
@@ -136,24 +127,6 @@ public class MyInfor_Fragment extends Fragment implements View.OnClickListener {
                 });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
-            }
-        } else if (changerPass.getId() == v.getId()) {
-            if (!SharedPref_RC.getInstance_RC(getActivity()).isLoggedIn_RC()) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                View mview = getLayoutInflater().inflate(R.layout.dialod_notification_login, null);
-                tvYes = mview.findViewById(R.id.tvYes_Dialog_NotificationLogin);
-                builder.setView(mview);
-                // click btn yes
-                tvYes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(getContext(), LoginActivity.class));
-                        getActivity().finish();
-                    }
-                });
-                builder.show();
-            } else {
-                startActivity(new Intent(getContext(), ChangePassActivity.class));
             }
         }else if (hdsd.getId() == v.getId()){
             startActivity(new Intent(getContext(), HDSDActivity.class));

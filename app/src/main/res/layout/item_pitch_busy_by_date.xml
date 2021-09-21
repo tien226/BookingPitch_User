@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:shrinkColumns="1,2,3,4,5,6"
+    android:stretchColumns="1,2,3,4,5,6">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tvPitchName_ItemPitchBusyByDate"
+            android:layout_marginRight="4dp"
+            android:gravity="center"
+            android:text="Tên sân"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCa1_ItemPitchBusyBudate"
+            android:layout_column="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_button_color"
+            android:gravity="center"
+            android:text="7h00 - 9h00"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCa2_ItemPitchBusyBudate"
+            android:layout_column="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_button_color"
+            android:gravity="center"
+            android:text="9h30 - 11h30"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/tvCa3_ItemPitchBusyBudate"
+            android:layout_column="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_button_color"
+            android:gravity="center"
+            android:text="13h00 - 15h30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCa4_ItemPitchBusyBudate"
+            android:layout_column="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_button_color"
+            android:gravity="center"
+            android:text="16h00 - 18h00"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCa5_ItemPitchBusyBudate"
+            android:layout_column="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_button_color"
+            android:gravity="center"
+            android:text="19h00 - 21h00"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvPitchName_ItemPitchBusyByDate"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Tên sân"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="2">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvCa1_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="8dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/bg_button_color"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 1: 7h00 - 9h00"-->
+    <!--            android:textColor="@color/black" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvCa2_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="8dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/bg_button_color"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 2: 9h30 - 11h30"-->
+    <!--            android:textColor="@color/black" />-->
+
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="2">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvCa3_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="8dp"-->
+    <!--            android:layout_weight="0.85"-->
+    <!--            android:background="@drawable/bg_button_color"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 3: 13h00 - 15h30"-->
+    <!--            android:textColor="@color/black" />-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvCa4_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/bg_button_color"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 4: 16h00 - 18h00"-->
+    <!--            android:textColor="@color/black" />-->
+
+
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="2">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvCa5_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="8dp"-->
+    <!--            android:layout_weight="0.85"-->
+    <!--            android:background="@drawable/bg_button_color"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 5: 19h00 - 21h00"-->
+    <!--            android:textColor="@color/black" />-->
+
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/gray_bg"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="Ca 4: 16h00 - 18h00"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:visibility="invisible" />-->
+
+
+    <!--    </LinearLayout>-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvSpanPitch_ItemPitchBusyBudate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Ca"-->
+    <!--            android:textColor="@color/red"-->
+    <!--            android:textSize="16sp" />-->
+
+</TableLayout>

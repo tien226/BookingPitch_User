@@ -35,7 +35,6 @@ public class VerifyOTPActivity extends AppCompatActivity implements View.OnClick
     private ProgressBar progressBar;
     private Button btnVerify, btnYesNotiApp;
     private String verificationId;
-    public static String strPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +47,13 @@ public class VerifyOTPActivity extends AppCompatActivity implements View.OnClick
 
         initView();
 
-        strPhone = getIntent().getStringExtra("mobile");
         tvTextMobile.setText(String.format("+84-%s", getIntent().getStringExtra("mobile")));
-        verificationId = getIntent().getStringExtra("verificationId");
 
         btnVerify.setOnClickListener(this);
         tvResetOTP.setOnClickListener(this);
         setupOTPInputs();
+        
+        verificationId = getIntent().getStringExtra("verificationId");
     }
 
     private void initView() {
@@ -242,7 +241,7 @@ public class VerifyOTPActivity extends AppCompatActivity implements View.OnClick
                                 btnVerify.setVisibility(View.VISIBLE);
                                 if (task.isSuccessful()){
                                     SharedPref_RC.getInstance_RC(VerifyOTPActivity.this).storeUserToKen_RC(String.valueOf(task.isSuccessful()));
-                                    
+
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);

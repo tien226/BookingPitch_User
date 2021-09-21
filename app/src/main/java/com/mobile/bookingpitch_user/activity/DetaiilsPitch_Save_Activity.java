@@ -36,6 +36,7 @@ public class DetaiilsPitch_Save_Activity extends AppCompatActivity {
     private Button btnCancel, btnYes, btnCancelDialog;
     private String str_Id;
     private ImageView cbTrongTai, cbAoDau, cbNuoc;
+    private Date date1, date2, date3, date4;
 
 
     @Override
@@ -51,7 +52,7 @@ public class DetaiilsPitch_Save_Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        if (bundle != null){
+        if (bundle != null) {
             Picasso.get().load(bundle.getString("img")).placeholder(R.drawable.img_details_pitch).error(R.drawable.img_details_pitch).into(imgPitch);
             tvName.setText(bundle.getString("name"));
 
@@ -63,36 +64,118 @@ public class DetaiilsPitch_Save_Activity extends AppCompatActivity {
 
             tvInfoPitch.setText(bundle.getString("note"));
 
-            SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-            SimpleDateFormat outputSdf = new SimpleDateFormat("dd-MM-yyyy");
-            try {
-                Date date = sdf.parse(bundle.getString("date"));
-                tvDate.setText(getString(R.string.ngay_dat_san) + ": " + outputSdf.format(date));
-            } catch (ParseException e) {
-                e.printStackTrace();
+            if (bundle.getString("date").length() == 8) {
+                SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+                SimpleDateFormat outputSdf = new SimpleDateFormat("dd-MM-yyyy");
+                try {
+                    Date date = sdf.parse(bundle.getString("date"));
+                    tvDate.setText(getString(R.string.ngay_dat_san) + ": " + outputSdf.format(date));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                if (bundle.getString("date").length() == 17) {
+                    SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+                    SimpleDateFormat outputSdf = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date1 = sdf.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    // ngay 2
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf2 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date2 = sdf2.parse(bundle.getString("date"));
+                        tvDate.setText(getString(R.string.ngay_dat_san) + ": " + outputSdf.format(date1) + ", " + outputSdf2.format(date2));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                } else if (bundle.getString("date").length() == 26) {
+                    SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+                    SimpleDateFormat outputSdf = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date1 = sdf.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    // ngay 2
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf2 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date2 = sdf2.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    // ngay 3
+                    SimpleDateFormat sdf3 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf3 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date3 = sdf3.parse(bundle.getString("date"));
+                        tvDate.setText(getString(R.string.ngay_dat_san) + ": " + outputSdf.format(date1) + ", " + outputSdf2.format(date2) + ", " + outputSdf3.format(date3));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+                    SimpleDateFormat outputSdf = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date1 = sdf.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    // ngay 2
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf2 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date2 = sdf2.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    // ngay 3
+                    SimpleDateFormat sdf3 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf3 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date3 = sdf3.parse(bundle.getString("date"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    // ngay 4
+                    SimpleDateFormat sdf4 = new SimpleDateFormat("ddMMyyyy/ddMMyyyy/ddMMyyyy/ddMMyyyy");
+                    SimpleDateFormat outputSdf4 = new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        date4 = sdf4.parse(bundle.getString("date"));
+                        tvDate.setText(getString(R.string.ngay_dat_san) + ": " + outputSdf.format(date1) + ", " + outputSdf2.format(date2) + ", " + outputSdf3.format(date3) + ", " + outputSdf4.format(date4));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
 
             str_Id = bundle.getString("_Id");
             tvUserId.setText(getString(R.string.so_dien_thoai) + ": " + bundle.getString("userID"));
             tvTotalPrice.setText(getString(R.string.tong_tien) + ": " + format.format(Integer.valueOf(bundle.getString("totalPrice"))) + " đ");
-            if (bundle.getBoolean("umpire") == true){
+            if (bundle.getBoolean("umpire") == true) {
                 cbTrongTai.setImageResource(R.drawable.check);
-            }else {
+            } else {
                 cbTrongTai.setImageResource(R.drawable.uncheck);
             }
 
-            if (bundle.getBoolean("tshirt") == true){
+            if (bundle.getBoolean("tshirt") == true) {
                 cbAoDau.setImageResource(R.drawable.check);
-            }else {
+            } else {
                 cbAoDau.setImageResource(R.drawable.uncheck);
             }
-            if (Integer.valueOf(bundle.getString("quantityWater")) == 0){
+            if (Integer.valueOf(bundle.getString("quantityWater")) == 0) {
                 cbNuoc.setImageResource(R.drawable.uncheck);
-            }else {
+            } else {
                 cbNuoc.setImageResource(R.drawable.check);
-                tvNuoc.setText(getString(R.string.dat_nuoc) + " (" + bundle.getString("quantityWater") + getString(R.string.binh) + ")");
+                tvNuoc.setText(getString(R.string.dat_nuoc) + " (" + bundle.getString("quantityWater") + " " + getString(R.string.binh) + ")");
             }
-            tvPriceWater.setText("(" + format.format(Integer.valueOf(bundle.getString("priceWater"))) + " đ)");
+            tvPriceWater.setText("(" + format.format(Integer.valueOf(bundle.getString("priceWater"))) + " đ/" + getString(R.string.binh) + " 20l)");
 
         }
 
@@ -131,27 +214,6 @@ public class DetaiilsPitch_Save_Activity extends AppCompatActivity {
 
     }
 
-    private void callAPICancelPitch() {
-        Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
-        retrofit.create(InterfaceAPI.class)
-                .cancelBookPitch(str_Id, "-1")
-                .enqueue(new Callback<CancelPitch>() {
-                    @Override
-                    public void onResponse(Call<CancelPitch> call, Response<CancelPitch> response) {
-                        CancelPitch cancelPitch = response.body();
-                        if (cancelPitch.getSuccess() == true){
-                            Toast.makeText(DetaiilsPitch_Save_Activity.this, cancelPitch.getMessage(), Toast.LENGTH_SHORT).show();
-                        }else {
-                            Toast.makeText(DetaiilsPitch_Save_Activity.this, "lỗi", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<CancelPitch> call, Throwable t) {
-                        Toast.makeText(DetaiilsPitch_Save_Activity.this, "Lỗi mạng hoặc lỗi hệ thống!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
 
     private void initView() {
         tvDate = findViewById(R.id.tvDateDetailsPitchSave);

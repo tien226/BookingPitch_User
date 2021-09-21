@@ -79,7 +79,7 @@ public class History_Fragment extends Fragment implements View.OnClickListener{
     }
 
     private void SetSpaceTabLayout() {
-        int betweenSpace = 50;
+        int betweenSpace = 40;
         ViewGroup slidingTabStrip = (ViewGroup) tabLayout.getChildAt(0);
 
         for (int i = 0; i < slidingTabStrip.getChildCount() - 1; i++) {
@@ -95,12 +95,17 @@ public class History_Fragment extends Fragment implements View.OnClickListener{
         adapter.AddFragment(new PitchWaiting_Fragment(), getString(R.string.dang_cho));
         adapter.AddFragment(new Fragment_Virtual(), "");
         adapter.AddFragment(new PitchKeeping_Fragment(), getString(R.string.da_dat));
+        adapter.AddFragment(new Fragment_Virtual(), "");
         adapter.AddFragment(new PitchCancel_Fragment(), getString(R.string.da_huy));
+        adapter.AddFragment(new Fragment_Virtual(), "");
+        adapter.AddFragment(new PitchDone_Fragment(), getString(R.string.da_da));
 
         pager.setAdapter(adapter);
         tabLayout.setupWithViewPager(pager);
 
         tabLayout.getTabAt(1).view.setVisibility(View.GONE);
+        tabLayout.getTabAt(3).view.setVisibility(View.GONE);
+        tabLayout.getTabAt(5).view.setVisibility(View.GONE);
     }
 
     private void dialogHistory() {

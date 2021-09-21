@@ -51,7 +51,6 @@ public class YardList_Adapter extends RecyclerView.Adapter<YardList_Adapter.View
         String strUrl = "https://datn-2021.herokuapp.com" + datum.getImage();
         Picasso.get().load(strUrl).placeholder(R.drawable.img_yardlist).error(R.drawable.img_yardlist).into(holder.imgAvatar);
         holder.tvName.setText(datum.getPitchName());
-//        holder.tvType.setText(yardList.);
         Locale locale = new Locale("vi", "VN");
         NumberFormat format = NumberFormat.getInstance(locale);
         holder.tvPrime.setText(format.format(Integer.valueOf(datum.getPrice())) + " đ");
@@ -63,7 +62,7 @@ public class YardList_Adapter extends RecyclerView.Adapter<YardList_Adapter.View
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsPitchActivity.class);
-                strImg = strUrl;
+                strImg = datum.getImage();
                 strName = datum.getPitchName();
                 strPrice = datum.getPrice();
                 strTime = datum.getSpan();
@@ -83,7 +82,7 @@ public class YardList_Adapter extends RecyclerView.Adapter<YardList_Adapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgAvatar;
-        private TextView tvName, tvType, tvPrime, tvStatus;
+        private TextView tvName, btnBookPitch, tvPrime, tvStatus;
         private LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -92,7 +91,7 @@ public class YardList_Adapter extends RecyclerView.Adapter<YardList_Adapter.View
             linearLayout = itemView.findViewById(R.id.llLayout_ItemYardList);
             imgAvatar = itemView.findViewById(R.id.imgAvatar_ItemYardList);
             tvName = itemView.findViewById(R.id.tvNamePitch_ItemYardList);
-            tvType = itemView.findViewById(R.id.tvTypePitch_ItemYardList);
+//            btnBookPitch = itemView.findViewById(R.id.btnBookPitch_ItemYardList);
             tvPrime = itemView.findViewById(R.id.tvPrimePitch_ItemYardList);
 //            tvStatus = itemView.findViewById(R.id.tvStatusPitch_ItemYardList);
         }

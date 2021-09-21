@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ListPitchsWaiting {
-
     @SerializedName("pitchID")
     @Expose
     private String pitchID;
@@ -17,6 +16,9 @@ public class ListPitchsWaiting {
     @SerializedName("userID")
     @Expose
     private String userID;
+    @SerializedName("userName")
+    @Expose
+    private String userName;
     @SerializedName("date")
     @Expose
     private String date;
@@ -50,6 +52,12 @@ public class ListPitchsWaiting {
     @SerializedName("createBy")
     @Expose
     private String createBy;
+    @SerializedName("codeSpecial")
+    @Expose
+    private String codeSpecial;
+    @SerializedName("dayOfWeek")
+    @Expose
+    private String dayOfWeek;
     @SerializedName("_id")
     @Expose
     private String id;
@@ -87,6 +95,14 @@ public class ListPitchsWaiting {
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getDate() {
@@ -177,6 +193,22 @@ public class ListPitchsWaiting {
         this.createBy = createBy;
     }
 
+    public String getCodeSpecial() {
+        return codeSpecial;
+    }
+
+    public void setCodeSpecial(String codeSpecial) {
+        this.codeSpecial = codeSpecial;
+    }
+
+    public String getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
     public String getId() {
         return id;
     }
@@ -192,5 +224,4 @@ public class ListPitchsWaiting {
     public void setV(Integer v) {
         this.v = v;
     }
-
 }

@@ -1,12 +1,7 @@
 package com.mobile.bookingpitch_user.activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -16,18 +11,26 @@ import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mobile.bookingpitch_user.NetworkReceiver;
 import com.mobile.bookingpitch_user.R;
 import com.mobile.bookingpitch_user.config.AppData;
 import com.mobile.bookingpitch_user.fragment.History.History_Fragment;
 import com.mobile.bookingpitch_user.fragment.Home_Fragment;
 import com.mobile.bookingpitch_user.fragment.MyInfor_Fragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
     public static TextView tvInternet;
     private BroadcastReceiver receiver;
+    private int REQUEST_CODE = 11;
+    private String strDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new Home_Fragment();
                     loadFragment(fragment);
                     return true;
+//                case R.id.nav_IconBook:
+//                    getDateNow();
+//                    // load fragment khi call api xong
+//                    fragment = new BookPitch_Fragment();
+//                    loadFragment(fragment);
+//                    return true;
                 case R.id.nav_IconHistory:
                     fragment = new History_Fragment();
                     loadFragment(fragment);
@@ -115,17 +126,19 @@ public class MainActivity extends AppCompatActivity {
                 //Write your code if there's no result
             }
         }
+
     }
 
-    protected void registerBroadcast(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+    protected void registerBroadcast() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             registerReceiver(receiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         }
     }
-    protected void unRegisterBroadcast (){
+
+    protected void unRegisterBroadcast() {
         try {
             unregisterReceiver(receiver);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
     }
@@ -135,4 +148,24 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         unRegisterBroadcast();
     }
+
+    private void getDateNow() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(year, month, dayOfMonth);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("ddMMyyyy");
+                strDate = simpleDateFormat.format(calendar.getTime());
+//                            edtDate.setText(strStartDate);
+                Toast.makeText(MainActivity.this, strDate, Toast.LENGTH_SHORT).show();
+
+            }
+        }, year, month, day);
+        datePickerDialog.show();
+    }
+
 }

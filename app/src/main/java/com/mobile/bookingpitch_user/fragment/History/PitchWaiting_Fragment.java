@@ -33,10 +33,13 @@ import com.mobile.bookingpitch_user.config.InterfaceAPI;
 import com.mobile.bookingpitch_user.config.InterfaceClickDialog;
 import com.mobile.bookingpitch_user.config.SharedPref_RC;
 import com.mobile.bookingpitch_user.model.CancelPitch;
+import com.mobile.bookingpitch_user.model.CreateUser;
 import com.mobile.bookingpitch_user.model.HistoryPitch_Model.HistoryPitch;
 import com.mobile.bookingpitch_user.model.HistoryPitch_Model.ListPitchsWaiting;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -113,6 +116,7 @@ public class PitchWaiting_Fragment extends Fragment implements SwipeRefreshLayou
         });
     }
 
+
     private void getAllSavePitch() {
         progressDialog.show();
 
@@ -124,7 +128,7 @@ public class PitchWaiting_Fragment extends Fragment implements SwipeRefreshLayou
                     public void onResponse(Call<HistoryPitch> call, Response<HistoryPitch> response) {
                         progressDialog.dismiss();
                         HistoryPitch historyPitch = response.body();
-                        if (historyPitch.getData().getListPitchsWaiting() != null) {
+                        if (historyPitch != null) {
                             listPitchsWaitingArrayList = new ArrayList<>();
                             listPitchsWaitingArrayList.addAll(historyPitch.getData().getListPitchsWaiting());
 
@@ -190,30 +194,60 @@ public class PitchWaiting_Fragment extends Fragment implements SwipeRefreshLayou
             public void onClick(View v) {
                 Log.e(PitchWaiting_Fragment.class.getName(), PitchWaitting_Adapter._Id);
 //
-                Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
-                retrofit.create(InterfaceAPI.class)
-                        .cancelBookPitch(PitchWaitting_Adapter._Id, "-1")
-                        .enqueue(new Callback<CancelPitch>() {
-                            @Override
-                            public void onResponse(Call<CancelPitch> call, Response<CancelPitch> response) {
-                                CancelPitch cancelPitch = response.body();
-                                if (cancelPitch.getSuccess() == true) {
+                if (PitchWaitting_Adapter._date.length() == 8){
+                    Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
+                    retrofit.create(InterfaceAPI.class)
+                            // để test, nhớ sửa
+                            .cancelBookPitch(PitchWaitting_Adapter._Id, "-1", "one", "user")
+                            .enqueue(new Callback<CancelPitch>() {
+                                @Override
+                                public void onResponse(Call<CancelPitch> call, Response<CancelPitch> response) {
+                                    CancelPitch cancelPitch = response.body();
+                                    if (cancelPitch.getSuccess() == true) {
 
-                                    listPitchsWaitingArrayList.remove(position);
-                                    adapter.notifyItemRemoved(position);
+                                        listPitchsWaitingArrayList.remove(position);
+                                        adapter.notifyItemRemoved(position);
 
-                                    dialog.dismiss();
-                                    Toast.makeText(getContext(), cancelPitch.getMessage(), Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getContext(), "lỗi", Toast.LENGTH_SHORT).show();
+                                        dialog.dismiss();
+                                        Toast.makeText(getContext(), cancelPitch.getMessage(), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getContext(), "Có lỗi xảy ra. Bạn vui lòng tải lại trang!", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
 
-                            @Override
-                            public void onFailure(Call<CancelPitch> call, Throwable t) {
-                                Toast.makeText(getContext(), "Lỗi mạng hoặc lỗi hệ thống!", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                                @Override
+                                public void onFailure(Call<CancelPitch> call, Throwable t) {
+                                    Toast.makeText(getContext(), "Lỗi mạng hoặc lỗi hệ thống!", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }else {
+                    Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
+                    retrofit.create(InterfaceAPI.class)
+                            // để test, nhớ sửa
+                            .cancelBookPitch(PitchWaitting_Adapter._codeSpecial, "-1", "many", "user")
+                            .enqueue(new Callback<CancelPitch>() {
+                                @Override
+                                public void onResponse(Call<CancelPitch> call, Response<CancelPitch> response) {
+                                    CancelPitch cancelPitch = response.body();
+                                    if (cancelPitch.getSuccess() == true) {
+
+                                        listPitchsWaitingArrayList.remove(position);
+                                        adapter.notifyItemRemoved(position);
+
+                                        dialog.dismiss();
+                                        Toast.makeText(getContext(), cancelPitch.getMessage(), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getContext(), "Có lỗi xảy ra. Bạn vui lòng tải lại trang!", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<CancelPitch> call, Throwable t) {
+                                    Toast.makeText(getContext(), "Lỗi mạng hoặc lỗi hệ thống!", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+
             }
         });
         // click btn cancel

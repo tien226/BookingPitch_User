@@ -63,7 +63,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
 //        startActivity(chooser);
 
         Intent intent = new Intent(Intent.ACTION_VIEW,
-        Uri.parse("google.navigation:q=21.03824794998889,105.74670126690945&mode=l"));
+        Uri.parse("google.navigation:q=21.038267977312046, 105.74674418220671&mode=l"));
         startActivity(intent);
     }
 

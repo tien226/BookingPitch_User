@@ -72,11 +72,10 @@ public class DetailsPitchActivity extends AppCompatActivity {
 
         tvInfoPitch.setText(YardList_Adapter.strDetail);
 
-        getPitchDetails();
+//        getPitchDetails();
 
         getDataPitchBusy();
 
-        
         btnBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,34 +140,34 @@ public class DetailsPitchActivity extends AppCompatActivity {
         tvInfoPitch = findViewById(R.id.tvInfoDetailsPitch);
     }
 
-    private void getPitchDetails(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy", Locale.getDefault());
-        String strDateNow = dateFormat.format(Calendar.getInstance().getTime());
-
-        Map<String, String> maps = new HashMap<>();
-        maps.put("pitchID", YardList_Adapter.strPitchId);
-        maps.put("date", strDateNow);
-
-        Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
-        retrofit.create(InterfaceAPI.class)
-                .detailsPitch(maps)
-                .enqueue(new Callback<DetailsPitch>() {
-                    @Override
-                    public void onResponse(Call<DetailsPitch> call, Response<DetailsPitch> response) {
-                        DetailsPitch detailsPitch = response.body();
-                        if (detailsPitch.getSpan() != null) {
-                            tvTime.setText(new Dao().getSpanPitchID(DetailsPitchActivity.this, detailsPitch.getSpan()));
-                            strSpanDetails = detailsPitch.getSpan();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<DetailsPitch> call, Throwable t) {
-                        Toast.makeText(DetailsPitchActivity.this, "Lỗi mạng hoặc lỗi hệ thống", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-    }
+//    private void getPitchDetails(){
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy", Locale.getDefault());
+//        String strDateNow = dateFormat.format(Calendar.getInstance().getTime());
+//
+//        Map<String, String> maps = new HashMap<>();
+//        maps.put("pitchID", YardList_Adapter.strPitchId);
+//        maps.put("date", strDateNow);
+//
+//        Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
+//        retrofit.create(InterfaceAPI.class)
+//                .detailsPitch(maps)
+//                .enqueue(new Callback<DetailsPitch>() {
+//                    @Override
+//                    public void onResponse(Call<DetailsPitch> call, Response<DetailsPitch> response) {
+//                        DetailsPitch detailsPitch = response.body();
+//                        if (detailsPitch != null) {
+//                            tvTime.setText(new Dao().getSpanPitchID(DetailsPitchActivity.this, detailsPitch.getSpan()));
+//                            strSpanDetails = detailsPitch.getSpan();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<DetailsPitch> call, Throwable t) {
+//                        Toast.makeText(DetailsPitchActivity.this, "Lỗi mạng hoặc lỗi hệ thống", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//    }
 
     @Override
     public boolean onSupportNavigateUp() {

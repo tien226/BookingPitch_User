@@ -34,7 +34,7 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
     private Button btn_ENlang, btn_VIlang;
     public static Configuration newConfig;
     private TextView tvSelectLanguage, tvSelectLogin, tvSupportMenu, tvInfoMenu, tvHDSDMenu;
-    private Button btnLoginWithEmail, btnLoginWithPhone, btnLoginNoAcc;
+    private Button btnLoginWithPhone, btnLoginNoAcc;
     private ImageView btn_login_menu, btn_login_cancelMenu;
     private ConstraintLayout lay_expand_icons;
     private static final int OPENMENU_DURATION = 100;
@@ -47,13 +47,13 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_login);
         setLanguage();
+
         initView();
 
         //is connect internet
         receiver = new NetworkReceiver();
         registerBroadcast();
 
-        btnLoginWithEmail.setOnClickListener(this);
         btnLoginWithPhone.setOnClickListener(this);
         btnLoginNoAcc.setOnClickListener(this);
         btn_ENlang.setOnClickListener(this);
@@ -78,7 +78,6 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
         lay_chatVCBS = findViewById(R.id.lay_login_chatVCBS);
         lay_expand_icons = findViewById(R.id.lay_login_expand_icons);
         btn_login_menu = findViewById(R.id.btn_login_menu);
-        btnLoginWithEmail = findViewById(R.id.btnLoginWithEmail);
         btnLoginWithPhone = findViewById(R.id.btnLoginWithPhone);
         btnLoginNoAcc = findViewById(R.id.btnLoginNoAcc);
 //        tvSelectLogin = findViewById(R.id.tvSelectLogin);
@@ -101,7 +100,6 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
     private void updateText() {
         tvSelectLanguage.setText(R.string.lua_chon_ngon_ngu);
 //        tvSelectLogin.setText(R.string.hinh_thuc_dang_nhap);
-        btnLoginWithEmail.setText(R.string.login_with_email);
         btnLoginWithPhone.setText(R.string.login_with_phone);
         btnLoginNoAcc.setText(R.string.login_no_acc);
         tvSupportMenu.setText(R.string.ho_tro);
@@ -131,9 +129,7 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
                 finish();
                 startActivity(refresh);
             }
-        } else if (btnLoginWithEmail.getId() == v.getId()) {
-            startActivity(new Intent(SelectLoginActivity.this, LoginActivity.class));
-        } else if (btnLoginWithPhone.getId() == v.getId()) {
+        }  else if (btnLoginWithPhone.getId() == v.getId()) {
             startActivity(new Intent(SelectLoginActivity.this, SendOTPActivity.class));
         } else if (btnLoginNoAcc.getId() == v.getId()) {
             finish();
@@ -206,7 +202,6 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
 
     private void showLoginMenu() {
 //        tvSelectLogin.setVisibility(View.GONE);
-        btnLoginWithEmail.setVisibility(View.GONE);
         btnLoginWithPhone.setVisibility(View.GONE);
         btnLoginNoAcc.setVisibility(View.GONE);
         btn_login_menu.setVisibility(View.GONE);

@@ -3,11 +3,13 @@ package com.mobile.bookingpitch_user.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -27,7 +29,7 @@ public class PitchWaitting_Adapter extends RecyclerView.Adapter<PitchWaitting_Ad
     private Context context;
     private ArrayList<ListPitchsWaiting> listPitchsWaitings;
     private InterfaceClickDialog clickDialog;
-    public static String _Id;
+    public static String _Id, _date, _codeSpecial;
 
     public PitchWaitting_Adapter(Context context, ArrayList<ListPitchsWaiting> listPitchsWaitings, InterfaceClickDialog clickDialog) {
         this.context = context;
@@ -51,8 +53,8 @@ public class PitchWaitting_Adapter extends RecyclerView.Adapter<PitchWaitting_Ad
     public void onBindViewHolder(@NonNull PitchWaitting_Adapter.ViewHolder holder, int position) {
         ListPitchsWaiting pitchsWaiting = listPitchsWaitings.get(position);
 
-//        String strUrl = "https://datn-2021.herokuapp.com" + pitchsWaiting.getImage();
-        String strUrl = pitchsWaiting.getImage();
+        String strUrl = "https://datn-2021.herokuapp.com" + pitchsWaiting.getImage();
+//        String strUrl = pitchsWaiting.getImage();
         Picasso.get().load(strUrl).placeholder(R.drawable.img_yardlist).error(R.drawable.img_yardlist).into(holder.imgAvatar);
         holder.tvName.setText(pitchsWaiting.getPitchName());
 //        holder.tvType.setText(datum.getPitchName());
@@ -63,6 +65,7 @@ public class PitchWaitting_Adapter extends RecyclerView.Adapter<PitchWaitting_Ad
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, DetaiilsPitch_Save_Activity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("img", strUrl);
@@ -84,36 +87,10 @@ public class PitchWaitting_Adapter extends RecyclerView.Adapter<PitchWaitting_Ad
             }
         });
 
-
+        //
         _Id = pitchsWaiting.getId();
-//        holder.imgEdit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Retrofit retrofit = ConfigRetrofitApi.getInstance_BooKingPitch();
-//                retrofit.create(InterfaceAPI.class)
-//                        .cancelBookPitch(pitchsWaiting.getId(), "-1")
-//                        .enqueue(new Callback<CancelPitch>() {
-//                            @Override
-//                            public void onResponse(Call<CancelPitch> call, Response<CancelPitch> response) {
-//                                CancelPitch cancelPitch = response.body();
-//                                if (cancelPitch.getSuccess() == true){
-//
-//                                    listPitchsWaitings.remove(position);
-//                                    notifyItemRemoved(position);
-//
-//                                    Toast.makeText(context, cancelPitch.getMessage(), Toast.LENGTH_SHORT).show();
-//                                }else {
-//                                    Toast.makeText(context, "lỗi", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onFailure(Call<CancelPitch> call, Throwable t) {
-//                                Toast.makeText(context, "Lỗi mạng hoặc lỗi hệ thống!", Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
-//            }
-//        });
+        _date = pitchsWaiting.getDate();
+        _codeSpecial = pitchsWaiting.getCodeSpecial();
     }
 
     @Override

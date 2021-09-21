@@ -124,7 +124,7 @@ public class PitchKeeping_Fragment extends Fragment implements SwipeRefreshLayou
                     public void onResponse(Call<HistoryPitch> call, Response<HistoryPitch> response) {
                         progressDialog.dismiss();
                         HistoryPitch historyPitch = response.body();
-                        if (historyPitch.getData().getListPitchsKeeping() != null) {
+                        if (historyPitch != null) {
                             listPitchsKeepings = new ArrayList<>();
                             listPitchsKeepings.addAll(historyPitch.getData().getListPitchsKeeping());
 

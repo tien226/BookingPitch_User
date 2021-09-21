@@ -98,7 +98,7 @@ public class PitchCancel_Fragment extends Fragment implements SwipeRefreshLayout
                     public void onResponse(Call<HistoryPitch> call, Response<HistoryPitch> response) {
                         progressDialog.dismiss();
                         HistoryPitch historyPitch = response.body();
-                        if (historyPitch.getData().getListPitchsCancel() != null) {
+                        if (historyPitch != null) {
                             listPitchsCancels = new ArrayList<>();
                             listPitchsCancels.addAll(historyPitch.getData().getListPitchsCancel());
 

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1042049438843-ehjovve2rkq7te4jgl3urtevgl96v7hs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.bookingpitch_user",
+            "certificate_hash": "91f734de312a5182fe445bd50aa6c5679d181790"
+          }
+        },
+        {
           "client_id": "1042049438843-lq2hr0oc7a01liiekrng6q43pg74t8ul.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
